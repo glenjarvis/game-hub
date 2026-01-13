@@ -11,19 +11,19 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-      <Card >
-        <Image src={getCroppedImageURL(game.background_image)} />
-        <CardBody>
-          <Heading fontSize="2xl">{game.name}</Heading>
-          <HStack justifyContent="space-between">
-            <PlatformIconList
-              key={game.name}
-              platforms={game.parent_platforms.map((p) => p.platform)}
-            />
-            <CriticScore score={game.metacritic} />
-          </HStack>
-        </CardBody>
-      </Card>
+    <Card>
+      <Image src={getCroppedImageURL(game.background_image)} />
+      <CardBody>
+        <HStack justifyContent="space-between" marginBottom={3}>
+          <PlatformIconList
+            key={game.name}
+            platforms={game.parent_platforms.map((p) => p.platform)}
+          />
+          <CriticScore score={game.metacritic} />
+        </HStack>
+        <Heading fontSize="2xl">{game.name}</Heading>
+      </CardBody>
+    </Card>
   );
 };
 
