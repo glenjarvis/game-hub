@@ -3,7 +3,7 @@ import { Grid, GridItem, HStack, Box } from "@chakra-ui/react";
 
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
-import GameHeading from "./components/gameHeading";
+import GameHeading from "./components/GameHeading";
 import GenreList from "./components/GenreList";
 import PlatformSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
