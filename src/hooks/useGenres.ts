@@ -1,4 +1,10 @@
-import useData from "./useData";
+/*
+ * Instead of dynamically refreshing via useData, we are now statically
+ * including data with repository. This will need refreshed if the API
+ * changes.
+ */
+
+import genreData from "../data/genres";
 
 export interface Genre {
   id: number;
@@ -6,6 +12,8 @@ export interface Genre {
   image_background: string;
 }
 
-const useGenres = () => useData<Genre>("/genres");
+const useGenres = () => {
+  return { data: genreData, error: [], isLoading: false };
+};
 
 export default useGenres;
