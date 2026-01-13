@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import PlatformSelector from "./components/PlatformSelector";
+import SearchInput from "./components/SearchInput";
 import SortSelector from "./components/SortSelector";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/usePlatforms";
@@ -28,7 +29,6 @@ function App() {
     >
       <GridItem area="nav">
         <NavBar />
-        <Text>NavBar</Text>
       </GridItem>
       <GridItem
         area="aside"
@@ -51,8 +51,8 @@ function App() {
 
           <SortSelector
             sortOrder={gameQuery.sortOrder}
-            onSelectSortOrder={(sortOrder) => 
-              setGameQuery({...gameQuery, sortOrder })
+            onSelectSortOrder={(sortOrder) =>
+              setGameQuery({ ...gameQuery, sortOrder })
             }
           />
         </HStack>
