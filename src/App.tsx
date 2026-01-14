@@ -46,23 +46,22 @@ function App() {
       <GridItem area="main">
         <Box paddingLeft={2}>
           <GameHeading gameQuery={gameQuery} />
-          <HStack spacing={5} marginBottom={5}>
+          <HStack gap={5} marginBottom={5}>
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
               onSelectPlatform={(platform) => {
                 setGameQuery({ ...gameQuery, platform });
               }}
             />
-
             <SortSelector
               sortOrder={gameQuery.sortOrder}
-              onSelectSortOrder={(sortOrder) =>
+              onSelectSortOrder={(sortOrder: string) =>
                 setGameQuery({ ...gameQuery, sortOrder })
               }
             />
           </HStack>
+          <GameGrid gameQuery={gameQuery} />
         </Box>
-        <GameGrid gameQuery={gameQuery} />
       </GridItem>
     </Grid>
   );

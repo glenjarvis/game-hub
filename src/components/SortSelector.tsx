@@ -1,4 +1,4 @@
-import { Button, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { Button, Menu } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
 interface Props {
@@ -18,22 +18,35 @@ const SortSelector = ({sortOrder, onSelectSortOrder}: Props) => {
 
   const currentSortOrder = sortOrders.find(order => order.value === sortOrder)
   return (
-    <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Sort by: {currentSortOrder?.label || "Relevance"}
-      </MenuButton>
-      <MenuList>
-        {sortOrders.map((order) => (
-          <MenuItem
-            onClick={() => onSelectSortOrder(order.value)}
-            key={order.value}
-            value={order.value}
-          >
-            {order.label}
-          </MenuItem>
-        ))}
-      </MenuList>
-    </Menu>
+    <Menu.Root positioning={{ placement: "bottom-start" }}>
+      {/* Chakra UI v3 type definitions incorrectly omit children prop when
+          using asChild. See: https://github.com/chakra-ui/chakra-ui/issues/10348 */}
+      {/* @ts-expect-error */}
+      <Menu.Trigger asChild>
+        <Button>
+          Sort by: {currentSortOrder?.label || "Relevance"}
+          <BsChevronDown />
+        </Button>
+      </Menu.Trigger>
+      {/* Chakra UI v3 type definitions incorrectly omit children prop.
+          See: https://github.com/chakra-ui/chakra-ui/discussions/9306 */}
+      {/* @ts-expect-error */}
+      <Menu.Positioner>
+        {/* @ts-expect-error */}
+        <Menu.Content>
+          {sortOrders.map((order) => (
+            // @ts-expect-error - Chakra UI v3 type def bug
+            <Menu.Item
+              onClick={() => onSelectSortOrder(order.value)}
+              key={order.value}
+              value={order.value}
+            >
+              {order.label}
+            </Menu.Item>
+          ))}
+        </Menu.Content>
+      </Menu.Positioner>
+    </Menu.Root>
   );
 };
 

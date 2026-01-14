@@ -1,23 +1,23 @@
-import { extendTheme, ThemeConfig } from "@chakra-ui/react";
+import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 
-const config: ThemeConfig = {
-  initialColorMode: "dark",
-};
-
-const theme = extendTheme({
-  config,
-  colors: {
-    gray: {
-      50: "#f9f9f9",
-      100: "#ededed",
-      200: "#d3d3d3",
-      400: "#a0a0a0",
-      500: "#898989",
-      600: "#6c6c6c",
-      700: "#202020",
-      800: "#121212",
-      900: "#111"
+const config = defineConfig({
+  theme: {
+    tokens: {
+      colors: {
+        gray: {
+          50: { value: "#f9f9f9" },
+          100: { value: "#ededed" },
+          200: { value: "#d3d3d3" },
+          400: { value: "#a0a0a0" },
+          500: { value: "#898989" },
+          600: { value: "#6c6c6c" },
+          700: { value: "#202020" },
+          800: { value: "#121212" },
+          900: { value: "#111" },
+        },
+      },
     },
   },
 });
-export default theme;
+
+export const system = createSystem(defaultConfig, config);
