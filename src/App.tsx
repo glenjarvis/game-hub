@@ -5,7 +5,7 @@ import { Grid, GridItem, HStack, Box } from "@chakra-ui/react";
 // CHAKRA_V3_FIX: All component imports disabled
 // import NavBar from "./components/NavBar";
 // import GameGrid from "./components/GameGrid";
-// import GameHeading from "./components/GameHeading";
+import GameHeading from "./components/GameHeading";
 import GenreList from "./components/GenreList";
 // import PlatformSelector from "./components/PlatformSelector";
 // import SortSelector from "./components/SortSelector";
@@ -48,11 +48,12 @@ function App() {
         />
       </GridItem>
       <GridItem area="main">
-        {/* CHAKRA_V3_FIX: Box, GameHeading, HStack, PlatformSelector, SortSelector, GameGrid disabled */}
-        <div>Main</div>
-        {/*
         <Box paddingLeft={2}>
-          <GameHeading gameQuery={gameQuery} />
+          <div>Main area</div>
+                    <GameHeading gameQuery={gameQuery} />
+        </Box>
+        {/*
+
           <HStack spacing={5} marginBottom={5}>
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
