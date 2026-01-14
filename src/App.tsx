@@ -12,7 +12,7 @@ import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/usePlatforms";
 
-import ColorModeSwitch from "./components/ColorModeSwitch";
+import NavBar from "./components/NavBar";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <ColorModeSwitch />
+      <NavBar onSearch={() => console.log("dummy")}/>
       <div>
         App
         {/* CHAKRA_V3_FIX: All Chakra components commented out below */}
