@@ -2,12 +2,13 @@ import { useState } from "react";
 // CHAKRA_V3_FIX: Commented out all Chakra imports
 // import { Grid, GridItem, HStack, Box } from "@chakra-ui/react";
 
-import NavBar from "./components/NavBar";
-import GameGrid from "./components/GameGrid";
-import GameHeading from "./components/GameHeading";
-import GenreList from "./components/GenreList";
-import PlatformSelector from "./components/PlatformSelector";
-import SortSelector from "./components/SortSelector";
+// CHAKRA_V3_FIX: All component imports disabled
+// import NavBar from "./components/NavBar";
+// import GameGrid from "./components/GameGrid";
+// import GameHeading from "./components/GameHeading";
+// import GenreList from "./components/GenreList";
+// import PlatformSelector from "./components/PlatformSelector";
+// import SortSelector from "./components/SortSelector";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/usePlatforms";
 
