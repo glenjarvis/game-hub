@@ -12,6 +12,8 @@ import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/usePlatforms";
 
+import ColorModeSwitch from "./components/ColorModeSwitch";
+
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
@@ -23,10 +25,12 @@ function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   return (
-    <div>
-      App
-      {/* CHAKRA_V3_FIX: All Chakra components commented out below */}
-      {/*
+    <>
+      <ColorModeSwitch />
+      <div>
+        App
+        {/* CHAKRA_V3_FIX: All Chakra components commented out below */}
+        {/*
       <Grid
         templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
         templateColumns={{
@@ -72,7 +76,8 @@ function App() {
         </GridItem>
       </Grid>
       */}
-    </div>
+      </div>
+    </>
   );
 }
 
