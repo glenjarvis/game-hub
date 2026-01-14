@@ -1,5 +1,4 @@
 import { useState } from "react";
-// CHAKRA_V3_FIX: Commented out all Chakra imports
 import { Grid, GridItem, HStack, Box } from "@chakra-ui/react";
 
 import NavBar from "./components/NavBar";
