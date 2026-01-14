@@ -6,7 +6,7 @@ import { Grid, GridItem, HStack, Box } from "@chakra-ui/react";
 // import NavBar from "./components/NavBar";
 // import GameGrid from "./components/GameGrid";
 // import GameHeading from "./components/GameHeading";
-// import GenreList from "./components/GenreList";
+import GenreList from "./components/GenreList";
 // import PlatformSelector from "./components/PlatformSelector";
 // import SortSelector from "./components/SortSelector";
 import { Genre } from "./hooks/useGenres";
@@ -42,8 +42,6 @@ function App() {
         padding={5}
         display={{ base: "none", lg: "block" }}
       >
-        {/* CHAKRA_V3_FIX: GenreList disabled */}
-        {/*
         <GenreList
           selectedGenre={gameQuery.genre}
           onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
@@ -51,6 +49,7 @@ function App() {
       </GridItem>
       <GridItem area="main">
         {/* CHAKRA_V3_FIX: Box, GameHeading, HStack, PlatformSelector, SortSelector, GameGrid disabled */}
+        <div>Main</div>
         {/*
         <Box paddingLeft={2}>
           <GameHeading gameQuery={gameQuery} />
